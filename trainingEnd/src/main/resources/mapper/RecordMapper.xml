@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.training.mapper.RecordMapper">
+<!--    <select id="listPageSelf" resultType="com.training.pojo.Record">-->
+<!--        select *from record ${ew.customSqlSegment}-->
+<!--    </select>-->
+<!--    <select id="listPageSelf" resultType="com.training.pojo.RecordRes">-->
+<!--        select record.*,-->
+<!--            (select u.name from user u where u.id = record.userid)  username,-->
+<!--            (select u.name from user u where u.id = record.adminId) adminname-->
+<!--        from record ${ew.customSqlSegment}-->
+<!--    </select>-->
+
+    <select id="listPageSelf" resultType="com.training.pojo.RecordRes">
+        select record.*,
+               trainingorder.name                                              goodsname,
+               priority.name                                            priorityname,
+              trainingtype.name                                          trainingtypename,
+               (select u.name from user u where u.id = record.userid)  username,
+               (select u.name from user u where u.id = record.adminId) adminname
+        from record,
+             trainingorder,
+             priority,
+             trainingtype  ${ew.customSqlSegment}
+
+    </select>
+
+    <resultMap id="BaseResultMap" type="com.training.pojo.Record">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="goods" column="goods" jdbcType="INTEGER"/>
+            <result property="userid" column="userId" jdbcType="INTEGER"/>
+            <result property="adminid" column="adminId" jdbcType="INTEGER"/>
+            <result property="weight" column="weight" jdbcType="INTEGER"/>
+            <result property="createtime" column="createtime" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,goods,userId,
+        adminId,weight,createtime,
+        remark
+    </sql>
+
+</mapper>

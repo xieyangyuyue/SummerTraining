@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.training.mapper.DeliveryMapper">
+
+    <resultMap id="BaseResultMap" type="com.training.pojo.Delivery">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="recipientname" column="recipientName" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="deliverydate" column="deliveryDate" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="driver" column="driver" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,recipientName,address,
+        deliveryDate,status,driver
+    </sql>
+</mapper>
