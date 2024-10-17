@@ -25,10 +25,6 @@ public class UserController {
 
     @Resource
     private MenuService menuService;
-	 @GetMapping("/hello")
-    public string hello() {
-        return "hello";
-    }
     //返回所有数据
     @GetMapping("/list")
     public List<User> list() {

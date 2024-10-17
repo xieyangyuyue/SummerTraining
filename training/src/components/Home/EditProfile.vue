@@ -106,41 +106,83 @@ export default {
 
 <style scoped>
 .edit-profile {
-    padding: 20px;
+    padding: 30px;
     max-width: 600px;
     margin: 0 auto;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .title {
     margin-bottom: 20px;
     text-align: center;
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: bold;
     color: #333;
 }
 
 .form-container {
-    background: #fff;
+    background: #fafafa;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .el-form-item {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.el-form-item label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
 }
 
 .el-form-item .el-input {
     width: 100%;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.el-form-item .el-input:focus {
+    border-color: #409EFF;
+    box-shadow: 0 0 4px rgba(64, 158, 255, 0.3);
 }
 
 .button-group {
     display: flex;
     justify-content: flex-end;
+    gap: 12px;
 }
 
 .button-group .el-button {
-    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button-group .el-button[type="primary"] {
+    background-color: #409EFF;
+    border: none;
+    color: #ffffff;
+}
+
+.button-group .el-button[type="primary"]:hover {
+    background-color: #66b1ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-group .el-button:not(.el-button--primary) {
+    background-color: #ffffff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+}
+
+.button-group .el-button:not(.el-button--primary):hover {
+    background-color: #f5f7fa;
+    border-color: #c0c4cc;
 }
 </style>

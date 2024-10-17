@@ -61,11 +61,17 @@ class RecordController {
         if (StringUtils.isNotBlank(name) && !"null".equals(name)) {
             QueryWrapper.like("trainingorder.name", name);
         }
+//        if (StringUtils.isNotBlank(trainingtype) && !"null".equals(trainingtype)) {
+//            QueryWrapper.like("priority.id", trainingtype);
+//        }
+//        if (StringUtils.isNotBlank(priority) && !"null".equals(priority)) {
+//            QueryWrapper.like("trainingtype.id", priority);
+//        }
         if (StringUtils.isNotBlank(trainingtype) && !"null".equals(trainingtype)) {
-            QueryWrapper.like("priority.id", trainingtype);
+            QueryWrapper.like("trainingtype.id", trainingtype);
         }
         if (StringUtils.isNotBlank(priority) && !"null".equals(priority)) {
-            QueryWrapper.like("trainingtype.id", priority);
+            QueryWrapper.like("priority.id", priority);
         }
         //封装查询结果
         IPage result = recordService.listPageSelf(page, QueryWrapper);
@@ -90,14 +96,14 @@ class RecordController {
         Random random = new Random();
         // 生成一个0到3之间的随机整数  地址
         int randomNumber = random.nextInt(3)+1;
-        delivery.setAddress("adddress"+randomNumber);
+        delivery.setAddress("address"+randomNumber);
         //司机
         int randomNumber1 = random.nextInt(5)+1;
         Driver driver=driverService.getById(randomNumber1);
         delivery.setDriver(driver.getName());
         //状态
-        int randomNumber2 = random.nextInt(2);
-        delivery.setStatus(randomNumber2);
+//        int randomNumber2 = random.nextInt(2);
+        delivery.setStatus(0);
 
 
         deliveryService.save(delivery);

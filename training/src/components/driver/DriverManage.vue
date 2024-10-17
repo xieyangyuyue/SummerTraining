@@ -4,9 +4,9 @@
     <div style="margin-bottom: 5px;">
       <el-input v-model="name" placeholder="请输入司机姓名" suffix-icon="el-icon-search" style="width: 200px;"
         @change="loadPost"></el-input>
-      <el-input v-model="license" placeholder="请输入驾驶证号码" suffix-icon="el-icon-search" style="width: 200px;"
-        @change="loadPost"></el-input>
-      <el-button type="primary" @click="loadPost">查询</el-button>
+      <el-input v-model="license" placeholder="请输入驾驶证号码" suffix-icon="el-icon-search"
+        style="margin-left: 5px ;width: 200px;" @change="loadPost"></el-input>
+      <el-button type="primary" style="margin-left: 5px" @click="loadPost">查询</el-button>
       <el-button type="success" @click="resetParam">重置</el-button>
       <el-button type="danger" @click="add">新增</el-button>
     </div>

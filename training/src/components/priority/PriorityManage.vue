@@ -5,7 +5,8 @@
             <el-input v-model="name" placeholder="请输入公司名字" suffix-icon="Search" style="width: 200px;"
                 @change="loadPost"></el-input>
 
-            <el-input v-model="remark" placeholder="请输入备注" style="width: 200px;" @change="loadPost"></el-input>
+            <el-input v-model="remark" placeholder="请输入备注" style="margin-left: 5px ;width: 200px"
+                @change="loadPost"></el-input>
 
             <el-button type="primary" style="margin-left: 5px;" @click="loadPost">查询</el-button>
             <el-button type="success" @click="resetParam">重置</el-button>

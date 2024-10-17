@@ -14,7 +14,7 @@
           <!-- 密码 -->
           <el-form-item label="密码" prop="password" class="form-item">
             <el-input type="password" v-model="loginForm.password" show-password autocomplete="off" size="small"
-              class="input-field" @keydown.enter="confirm"/>
+              class="input-field" />
           </el-form-item>
           <el-form-item>
             <div class="button-group">
@@ -58,7 +58,8 @@ export default {
               this.$message({ message: '登陆成功!', type: 'success' });
               sessionStorage.setItem("LoginUser", JSON.stringify(res.data.user));
               this.$store.commit("setMenu", res.data.menu);
-              this.$router.replace('/Indextest');
+              // this.$router.replace('/Indextest');
+              this.$router.replace('/Home');
             } else {
               this.$message({ message: '校验失败 用户名或密码错误!', type: 'error' });
               this.confirm_disable = false;

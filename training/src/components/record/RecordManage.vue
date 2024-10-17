@@ -20,6 +20,7 @@
 
             <el-button type="primary" style="margin-left: 5px ;" @click="loadPost">查询</el-button>
             <el-button type="success" @click="resetParam">重置</el-button>
+
         </div>
         <el-table :data="tableData" :header-cell-style="{ background: '#f2f5fc', color: '#555555' }" border>
             <el-table-column prop="id" label="Id" width="60" />

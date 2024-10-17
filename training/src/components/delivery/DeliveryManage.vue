@@ -13,11 +13,11 @@
       <el-table-column prop="address" label="地址" />
       <el-table-column prop="deliverydate" label="配送日期" />
       <el-table-column prop="status" label="状态">
-        <!-- 插槽default
+        <!-- 插槽default 
                  自定义列的内容-->
         <template #default="scope">
           <!-- el-tag用于标记和选择 -->
-          <!-- type	Tag 的类型
+          <!-- type	Tag 的类型 
                  disable-transitions	是否禁用渐变动画	false-->
           <!-- :type展示图标形状颜色，差值表达式展示文字信息 -->
           <el-tag :type="scope.row.status === 0 ? 'primary' : 'success'" disable-transition>{{ scope.row.status ===
