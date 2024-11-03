@@ -11,7 +11,7 @@ import axios from 'axios'
 import router from './router'
 import store from './store'
 //设置全局axios地址
-axios.defaults.baseURL = 'http://localhost:8091/'
+axios.defaults.baseURL = 'http://localhost:8090/'
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 const app = createApp(App)
